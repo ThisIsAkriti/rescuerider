@@ -2,16 +2,8 @@
 import User from "@/lib/models/user.model"
 import dbConnect from "@/utils/dbConnect";
 
-interface UserType{
-  clerkId: string;
-  email: string;
-  name: string;
-  imageUrl: string;
-  createdAt: Date;
-}
 
-
-const createUser = async(user:UserType) => {
+const createUser = async(user : unknown) => {
     try {
         await dbConnect();
         const newUser = await User.create(user);
