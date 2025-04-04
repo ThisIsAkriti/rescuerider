@@ -2,6 +2,6 @@
 // import { headers } from 'next/headers'
 // import { WebhookEvent } from '@clerk/nextjs/server'
 
-// export async function POST(req: Request) { 
-
-// }
+export async function POST() {
+    console.log("clerk Post webhook")
+}
