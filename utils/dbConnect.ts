@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI as string;
 
 if (!MONGO_URI) {
     throw new Error("Mongo URI not found!");
@@ -13,7 +13,7 @@ async function dbConnect() {
     }
 
     try {
-        await mongoose.connect(MONGO_URI || '', {});
+        await mongoose.connect(MONGO_URI);
         console.log("MongoDB connected successfully!");
     } catch (err) {
         console.error("MongoDb connection failed. " + err);
